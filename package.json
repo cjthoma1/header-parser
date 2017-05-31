@@ -1,0 +1,19 @@
+{
+  "name": "cray",
+  "version": "1.0.0",
+  "description": "parsing the header",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node":   "6.10.3",
+    "npm": "3.10.10"
+  },
+  "author": "cray",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
