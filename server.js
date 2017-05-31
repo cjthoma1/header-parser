@@ -1,11 +1,16 @@
 var express = require("express"),
 app = express(),
 port = process.env.PORT || '8080';
+app.enable('trust proxy');
+app.use((req, res) => {
 
-app.use((reg, res) => {
+var headerObj = {
+    ip:  req.ip,
+    Language: req.headers["accept-language"],
+    OS: req.headers["user-agent"]
+}
     
-    
-res.end("Hello World!!");
+res.send(headerObj);
 })
 
 app.listen(port, () => {
