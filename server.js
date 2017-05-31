@@ -8,17 +8,20 @@ locale = require("locale");
 app.enable('trust proxy');
 app.use(useragent.express());
 app.use((req, res) => {
-// res.header("Content-Type", "text/plain")
+
 
 var source = req.useragent.source,
 index1 = source.indexOf("("),
 index2 = source.indexOf(")")
-source = source.slice(index1+1, index2)
+source = source.slice(index1+1, index2);
+
+var language = req.headers["accept-language"],
+language = language.slice(0,language.indexOf(','))
 
 
 var headerObj = {
     ipaddress:  req.ip,
-    language: req.headers["accept-language"],
+    language: language,
     software: source
 }
     
@@ -26,5 +29,5 @@ res.send(headerObj);
 })
 
 app.listen(port, () => {
-    console.log("Listening on port "+port);
+    console.log("Listening on port "+ port);
 })
