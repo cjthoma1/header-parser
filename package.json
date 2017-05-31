@@ -8,12 +8,14 @@
     "start": "node server.js"
   },
   "engines": {
-    "node":   "6.10.3",
+    "node": "6.10.3",
     "npm": "3.10.10"
   },
   "author": "cray",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "express-useragent": "^1.0.7",
+    "locale": "^0.1.0"
   }
 }
