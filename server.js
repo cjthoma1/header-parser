@@ -1,8 +1,7 @@
 var express = require("express"),
 app = express(),
 port = process.env.PORT || '8080',
-useragent = require('express-useragent'),
-locale = require("locale");
+useragent = require('express-useragent');
 
 
 app.enable('trust proxy');
