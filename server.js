@@ -15,8 +15,8 @@ index2 = source.indexOf(")")
 source = source.slice(index1+1, index2);
 
 var language = req.headers["accept-language"],
-language = language.slice(0,language.indexOf(','))
-
+// language = language.slice(0,language.indexOf(','))
+language = language.split(",")[0]
 
 var headerObj = {
     ipaddress:  req.ip,
